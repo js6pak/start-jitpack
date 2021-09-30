@@ -1,6 +1,6 @@
 import * as core from "@actions/core";
 import * as github from "@actions/github";
-import fetch from "node-fetch";
+import { HttpClient } from "@actions/http-client";
 
 (async () => {
   try {
@@ -23,16 +23,17 @@ import fetch from "node-fetch";
 
     core.info(`Requesting ${url}`);
 
-    const response = await fetch(url);
+    const http = new HttpClient();
+    const response = await http.get(url);
 
-    if (!response.ok) {
+    if (response.message.statusCode !== 200) {
       core.setFailed(
-        `JitPack responded: ${response.status} ${response.statusText}`
+        `JitPack responded: ${response.message.statusCode} ${response.message.statusMessage}`
       );
       return;
     }
 
-    const text = await response.text();
+    const text = await response.readBody();
 
     core.info(text);
 
