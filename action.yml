@@ -1,0 +1,6 @@
+name: "start-jitpack"
+description: "Automatically starts a jitpack build"
+author: "js6pak"
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
