@@ -1,7 +1,6 @@
 {
   "name": "start-jitpack",
   "version": "0.1.0",
-  "description": "TypeScript template action",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -11,9 +10,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/js6pak/start-jitpack.git"
   },
-  "author": "",
+  "author": "js6pak",
   "license": "LGPLv3",
   "dependencies": {
     "@actions/core": "^1.6.0",
