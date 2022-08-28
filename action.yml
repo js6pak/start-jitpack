@@ -1,6 +1,9 @@
 name: "start-jitpack"
 description: "Automatically starts a jitpack build"
 author: "js6pak"
+branding:
+  icon: "send"
+  color: "black"
 runs:
   using: 'node16'
   main: 'dist/index.js'
